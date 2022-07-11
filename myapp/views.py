@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .models import Product
 
 # Create your views here.
 def index(request):
@@ -7,5 +8,8 @@ def index(request):
 
 
 def products(request):
-    products = ["iphone","imac","ipad"]
-    return HttpResponse(products)
+    products = Product.objects.all()
+    context = {
+        'products':products
+    }
+    return render(request,'myapp/index.html',context)
