@@ -1,10 +1,28 @@
+{% load static %}
 <html>
     <head>
-
+        <link rel="stylesheet" href="{% static 'myapp/style.css' %}">
     </head>
 
     <body>
-        <h1>This is a template</h1>
+        <nav class="bg-white shadow-lg">
+            <div class="max-w-6xl mx-auto">
+                <div class="flex">
+                <div>
+                    <div class="flex">
+                        <a href="#" class="flex px-2 px-4">
+                            <img class="h-8 w-8" src="{% static 'myapp/images/shopping.png' %}" alt="">
+                        <span class="text-gray-500 text-lg" >Buy&Sell</span>
+                        </a>
+                        
+                    </div>
+                </div>
+                <a href="#" class="py-4 px-2 text-gray-500 font-semibold">Home</a>
+                <a href="#" class="py-4 px-2 text-gray-500 font-semibold">About</a>
+                <a href="#" class="py-4 px-2 text-gray-500 font-semibold">Contact</a>
+                </div>
+            </div>
+        </nav>
         {% for product in products %}
         <a href="/myapp/products/{{product.id}}">
         <h2> {{product.name}} </h2> -> {{product.price}} -> {{product.desc}}</br>
