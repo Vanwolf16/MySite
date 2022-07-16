@@ -20,3 +20,7 @@ def product_detail(request,id):
         'product':product
     }
     return render(request,'myapp/detail.html',context)
+
+
+def add_product(request):
+    return render(request, 'myapp/addproduct.html')
